@@ -1,4 +1,4 @@
-import { services } from "@/content/site";
+import { services, servicesSectionDescription } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -16,7 +16,7 @@ export function ServicesSection() {
             id="services-heading"
             eyebrow="Services"
             title="提供サービス"
-            description="医療機関のフェーズに合わせ、構築から研修・コンサルまで一気通貫で支援します。"
+            description={servicesSectionDescription}
           />
         </FadeInSection>
         <ul className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12 lg:gap-x-14 lg:gap-y-14">

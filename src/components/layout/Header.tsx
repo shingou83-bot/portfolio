@@ -18,7 +18,7 @@ export function Header() {
           onClick={() => setOpen(false)}
         >
           Shingo
-          <span className="ml-2 font-normal text-gold-400">医療AI</span>
+          <span className="ml-2 font-normal text-gold-400">AI × Web</span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="メイン">
           {navLinks.map((link) => (

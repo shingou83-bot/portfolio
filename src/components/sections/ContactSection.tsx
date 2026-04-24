@@ -112,7 +112,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <label htmlFor="contact-org" className={labelClass}>
-                    医療機関名 <span className="text-red-600">*</span>
+                    会社名・屋号（任意）
                   </label>
                   <input
                     id="contact-org"

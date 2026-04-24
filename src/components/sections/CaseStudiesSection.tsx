@@ -1,10 +1,16 @@
-import { Building2, GraduationCap, Stethoscope } from "lucide-react";
+import {
+  Building2,
+  GraduationCap,
+  MessageCircle,
+  Stethoscope,
+  Store,
+} from "lucide-react";
 import { caseStudies } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const icons = [Stethoscope, Building2, GraduationCap];
+const icons = [Stethoscope, Building2, GraduationCap, MessageCircle, Store];
 
 export function CaseStudiesSection() {
   return (
@@ -19,14 +25,14 @@ export function CaseStudiesSection() {
             id="cases-heading"
             eyebrow="Case studies"
             title="導入事例（代表シナリオ）"
-            description="制作実績・デモギャラリーの3本柱（問診AI・SOAP記録・プロンプト講座）に対応する代表シナリオです。詳細は個別にご相談ください。"
+            description="医療現場の事例に加え、個人事業主・小売・サービス業を想定した代表シナリオ（一部架空）を掲載しています。詳細は個別にご相談ください。"
           />
         </FadeInSection>
         <ul className="grid gap-6 lg:grid-cols-3 lg:gap-8">
           {caseStudies.map((c, i) => {
             const Icon = icons[i] ?? Building2;
             return (
-              <li key={c.industry}>
+              <li key={`${c.industry}-${i}`}>
                 <FadeInSection delay={i * 0.06}>
                   <article className="flex h-full flex-col rounded-2xl border border-navy-100 bg-gradient-to-b from-white to-navy-50 p-6 shadow-sm md:p-8">
                     <div className="mb-4 flex items-center gap-3">

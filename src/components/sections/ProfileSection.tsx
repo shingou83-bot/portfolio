@@ -17,7 +17,7 @@ export function ProfileSection() {
             id="profile-heading"
             eyebrow="Profile"
             title="プロフィール"
-            description="看護師としての現場経験と、エンジニアとしての実装力を掛け合わせています。"
+            description="臨床の現場感と、AI・Web の実装を組み合わせ、業種を問わず伴走します。"
           />
         </FadeInSection>
         <FadeInSection>
