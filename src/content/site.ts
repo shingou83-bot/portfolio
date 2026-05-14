@@ -172,13 +172,13 @@ export const portfolioItems: PortfolioItem[] = [
     demoUrl: "https://udify.app/chat/Ll5d2LmJaL47xTrL",
   },
   {
-    title: "ホームページ制作サンプル",
-    subtitle: "手打ちうどん店 LP（架空店舗・公開デモ）",
+    title: "病院・クリニック向けプロモーションサイト",
+    subtitle: "チャットボット（AIアシスタント）付き・公開中",
     summary:
-      "飲食店の開業・店舗サイトを想定した1ページ構成。こだわり・メニュー・アクセスなど来店導線を整理したサンプルです。",
-    tags: ["Next.js", "Vercel"],
-    gradient: "from-gold-600 to-navy-800",
-    demoUrl: "https://udondemo.netlify.app/",
+      "サービス紹介・事例・料金・FAQ に加え、画面右下の AI アシスタントで訪問者からの質問に一次対応できる構成です。医療ドメイン向けの本番公開サイトとしてご覧いただけます。",
+    tags: ["Next.js", "Vercel", "Claude API"],
+    gradient: "from-navy-800 to-gold-600",
+    demoUrl: "https://my-hp-plum.vercel.app/",
   },
 ];
 

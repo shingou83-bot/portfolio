@@ -21,7 +21,7 @@ export function PortfolioSection() {
             id="portfolio-heading"
             eyebrow="Portfolio"
             title="制作実績・デモギャラリー"
-            description="医療ドメインの公開デモに加え、業種横断のチャットボット・Web サンプルを順次掲載します。各カードの技術タグと概要をご確認ください。"
+            description="医療向けの公開サイト・デモに加え、業種横断のチャットボットや教材を掲載しています。各カードの技術タグと概要をご確認ください。"
           />
         </FadeInSection>
         <ul className="grid gap-6 md:grid-cols-3 md:gap-8">
