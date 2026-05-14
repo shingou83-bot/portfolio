@@ -19,7 +19,7 @@ export function ServicesSection() {
             description={servicesSectionDescription}
           />
         </FadeInSection>
-        <ul className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12 lg:gap-x-14 lg:gap-y-14">
+        <ul className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-14">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (

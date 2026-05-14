@@ -26,7 +26,7 @@ export function HeroSection() {
             </p>
             <h1
               id="hero-heading"
-              className="text-4xl font-bold leading-snug tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+              className="text-balance text-4xl font-bold leading-snug tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
             >
               {hero.title}
             </h1>

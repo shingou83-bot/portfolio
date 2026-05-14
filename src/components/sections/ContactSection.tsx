@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { profile } from "@/content/site";
+import { contact, profile } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -66,24 +66,46 @@ export function ContactSection() {
             id="contact-heading"
             eyebrow="Contact"
             title="お問い合わせ"
-            description="無料相談・お見積りのご依頼はフォームまたは X からどうぞ。"
+            description={contact.intro}
           />
         </FadeInSection>
         <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-5 lg:gap-12">
           <FadeInSection className="lg:col-span-2">
-            <div className="rounded-2xl border border-navy-100 bg-navy-900 p-6 text-white shadow-lg md:p-8">
-              <p className="text-xl font-bold md:text-2xl">X（旧 Twitter）</p>
-              <p className="mt-2 text-sm leading-[1.9] text-white/75 md:text-base md:leading-[1.9]">
-                気軽にDMやリプライでご連絡ください。
-              </p>
+            <div className="flex flex-col gap-4 rounded-2xl border border-navy-100 bg-navy-900 p-6 text-white shadow-lg md:p-8">
+              <p className="text-sm font-bold text-gold-300">ご連絡先</p>
+              <Link
+                href={`mailto:${profile.email}`}
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 text-center text-sm font-bold text-white transition hover:bg-white/20"
+              >
+                メール：{profile.email}
+              </Link>
               <Link
                 href={profile.xUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-navy-950 shadow-lg shadow-gold-900/35 ring-2 ring-gold-300/60 transition hover:bg-gold-400 hover:ring-gold-200/80"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-gold-500 px-4 text-center text-sm font-bold text-navy-950 shadow-lg shadow-gold-900/35 ring-2 ring-gold-300/60 transition hover:bg-gold-400 hover:ring-gold-200/80"
               >
-                {profile.handle} を開く
+                X {profile.handle} を開く
               </Link>
+              <Link
+                href={contact.googleFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 text-center text-sm font-bold text-white transition hover:bg-white/20"
+              >
+                Googleフォームで相談する
+              </Link>
+              <button
+                type="button"
+                disabled
+                className="inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 text-center text-sm font-bold text-white/45"
+                aria-disabled="true"
+              >
+                LINE公式（準備中）
+              </button>
+              <p className="text-xs leading-[1.85] text-white/55">
+                このページのフォームからも送信いただけます。
+              </p>
             </div>
           </FadeInSection>
           <FadeInSection className="lg:col-span-3" delay={0.05}>

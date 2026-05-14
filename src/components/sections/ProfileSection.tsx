@@ -34,8 +34,19 @@ export function ProfileSection() {
                   {profile.handle}
                 </span>
               </p>
+              <p className="mt-1 text-sm font-medium text-navy-600 md:text-base">
+                {profile.tradeName}
+              </p>
               <p className="mt-1 text-sm font-bold text-navy-700 md:text-base">
                 {profile.roles}
+              </p>
+              <p className="mt-2 text-sm md:text-base">
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="font-medium text-gold-700 underline-offset-2 hover:underline"
+                >
+                  {profile.email}
+                </a>
               </p>
               <div className="mt-6 space-y-4 text-sm leading-[1.9] text-navy-800 md:text-base md:leading-[1.9]">
                 {profile.story.map((paragraph, i) => (

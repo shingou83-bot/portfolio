@@ -1,29 +1,24 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  Bot,
-  GraduationCap,
-  LayoutTemplate,
-  Workflow,
-} from "lucide-react";
+import { BookOpen, CalendarClock, MessagesSquare } from "lucide-react";
 
 export const siteMeta = {
   title:
-    "内田真悟（Shingo） | 現役看護師（病棟、外来、オペ室）× AIシステム構築・Web制作",
+    "内田真悟（Shingo Uchida）| Vital Lab — AIシステム構築・Web制作（現役看護師）",
   description:
-    "中小企業・個人事業主向けに、Claude API / Dify / ChatGPT API を活用したチャットボット、業務自動化、Next.js によるホームページ・LP制作、AI活用コンサル・研修を提供。Netlify / Vercel で公開まで伴走。東京・埼玉（東村山・所沢中心）から全国対応。",
+    "中小企業経営者・個人事業主・小規模事業者向け。Claude API / Dify / ChatGPT API によるチャットボット、業務自動化、Next.js の Web 制作まで業種を問わず伴走。Netlify / Vercel で公開まで対応。",
 };
 
 export const hero = {
-  eyebrow: "あなたのビジネスの\"面倒\"を、AIとWebで仕組み化する",
-  title: "現役看護師 × AIシステム構築・Web制作",
+  eyebrow: "現役看護師 × AIシステム構築・Web制作",
+  title: "AIという『文句を言わない即戦力』を採用しませんか？",
   subtitle:
-    "中小企業・個人事業主の皆さまへ。チャットボット、業務自動化、サイト制作まで、業種を問わず伴走します。活動エリアは東京・埼玉（東村山・所沢中心）／オンラインで全国対応可能です。",
+    "あなたのビジネスの\"面倒\"を、AIとWebで仕組み化する。中小企業・個人事業主の皆さまへ、チャットボットからサイト制作まで業種を問わず伴走します。",
   ctaLabel: "まずは無料相談する",
 };
 
 /** サービスセクション見出し下の説明文 */
 export const servicesSectionDescription =
-  "課題の整理から構築、公開、運用サポートまで。ボット・自動化・Web・研修を組み合わせて、続けられる形に落とし込みます。";
+  "窓口案内から24時間受付、独自ナレッジ学習まで。課題に合わせて設計し、運用しやすい形でお渡しします。";
 
 export type ServiceItem = {
   title: string;
@@ -34,48 +29,37 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-    title: "チャットボット構築",
+    title: "SERVICE 01：窓口・案内係AI（FAQ・問い合わせ自動化）",
     description:
-      "FAQ対応・予約案内・問い合わせの一次対応などを、業種を問わず設計・構築します。",
+      "「持ち物は？」「送料は？」など毎日同じ質問に自動回答。スタッフの電話対応時間を削減し、本来の業務に集中できる環境を構築します。",
     features: [
-      "Claude API / Dify / ChatGPT API を状況に応じて選定",
-      "LINE や既存 Web サイトへの埋め込みにも対応",
-      "ナレッジ更新しやすい会話フローを設計",
+      "クリニック・施設の窓口、ECサイトの問い合わせなど幅広い業種で活用可能",
+      "電話・チャット・Web の一次対応を設計",
+      "ナレッジ更新しやすい会話フローを整備",
     ],
-    icon: Bot,
+    icon: MessagesSquare,
   },
   {
-    title: "業務自動化・AIエージェント開発",
+    title: "SERVICE 02：24時間自動受付AI（予約・問い合わせ対応）",
     description:
-      "書類作成の下書き、データ整理、メール文案など、定型に近い業務を AI で省力化します。",
+      "深夜・休日でも予約や問い合わせに即レス。「電話に出られなくて他社にお客様を取られた」という機会損失を減らす設計が可能です。",
     features: [
-      "プロンプト設計から API 連携・社内ツール組み込みまで対応",
-      "確認フローや権限設計など、誤用防止のガードレールを検討",
-      "小さく始めて効果を測りながら拡張する段階導入も可能",
+      "不動産・美容室・飲食店など、予約導線に合わせたシナリオ設計",
+      "営業時間外も見込み客を逃さない一次対応",
+      "既存の予約・CRM 連携は要件に応じて検討",
     ],
-    icon: Workflow,
+    icon: CalendarClock,
   },
   {
-    title: "ホームページ・LP制作",
+    title: "SERVICE 03：専属コンシェルジュAI（RAGによる独自情報学習）",
     description:
-      "Next.js や HTML/CSS による静的サイト・ランディングページを制作します。",
+      "御社のHP・パンフレット・料金表・規約をAIに学習させ、御社のルールに沿った回答のみを返すコンシェルジュ型を構築します。",
     features: [
-      "開業・リニューアル・ポートフォリオなど用途に合わせた構成",
-      "スマホ表示や表示速度を意識したレスポンシブ設計",
-      "Netlify / Vercel を想定した公開・運用のしやすさ",
+      "社内向け（新人教育・マニュアル検索・総務QA）にも応用可能",
+      "出典・確認フローを意識したガードレール設計",
+      "更新された資料の再学習フローを整備",
     ],
-    icon: LayoutTemplate,
-  },
-  {
-    title: "AI活用コンサルティング・研修",
-    description:
-      "経営者・スタッフ向けに、AI を「使える状態」にするための伴走支援を行います。",
-    features: [
-      "ツール選定、プロンプト設計、社内ルール整備のすり合わせ",
-      "職種・ITリテラシーに合わせたハンズオン研修",
-      "導入初期の不安を減らすケーススタディ中心の内容",
-    ],
-    icon: GraduationCap,
+    icon: BookOpen,
   },
 ];
 
@@ -97,38 +81,47 @@ export const stats = [
   },
 ];
 
-export const caseStudies = [
+export type CaseStudy = {
+  industry: string;
+  challenge: string;
+  /** 医療事例など、課題と成果を2ブロックで示す場合に使用 */
+  outcome?: string;
+  /** 架空事例など、取り組みを明示する場合 */
+  approach?: string;
+  /** 効果・結果 */
+  result?: string;
+  /** 対話デモURL（未確定時は "#"） */
+  demoUrl: string;
+  /** デモボタン文言（省略時は既定） */
+  demoLabel?: string;
+};
+
+export const caseStudies: CaseStudy[] = [
   {
-    industry: "歯科クリニック",
-    challenge: "問診・全身リスク説明に時間がかかり、スタッフ負担が大きい",
-    outcome:
-      "来院前AI問診デモ（サンプル歯科・公開）で対話型ガイドを検証。来院前の情報整理と説明の平準化に向けた設計",
-  },
-  {
-    industry: "病院（地域包括ケア等）",
-    challenge: "多職種連携の文書が多く、看護記録の質と効率の両立が課題",
-    outcome:
-      "週間SOAP自動生成デモ（公開）で経過データからの下書き生成を実証。匿名化と確認フローを組み込んだ運用イメージを共有",
-  },
-  {
-    industry: "病院・診療所（職員研修）",
+    industry: "クリニック受診案内AI",
     challenge:
-      "生成AI導入後も指示の出し方が職員ごとにばらつき、患者説明や記録補助を安全に使い切れていない",
-    outcome:
-      "医療職員向けプロンプト基礎講座（公開スライド教材）と同じ構成で、役割明示・フォーマット指定・出力確認の原則を多職種向けに体系化。15セッション超の設計知見を反映",
+      "「持ち物は？」「今日やってる？」という電話が鳴り止まず、窓口が常に多忙だった",
+    result: "窓口の電話が3〜4割減り、スタッフの負担が激減",
+    demoUrl: "https://udify.app/chat/kR538Rnv0ttQbiy4",
   },
   {
-    industry: "個人事業主（オンライン講師・架空シナリオ）",
+    industry: "不動産内見予約AI",
+    challenge: "営業時間外の問い合わせを他社に取られ、機会損失が続いていた",
+    result: "夜間の予約数が約20%アップ",
+    demoUrl: "https://udify.app/chat/H3Dp8wV3fzJLUAnX",
+  },
+  {
+    industry: "ヘアサロン予約・接客AI",
+    challenge: "シャンプー中に電話に出られず、予約や問い合わせを取りこぼしていた",
+    result: "電話対応を月60時間削減し、新規予約率も向上",
+    demoUrl: "https://udify.app/chat/XLSfg62SSFQxzbWT",
+  },
+  {
+    industry: "ECサイト24時間接客AI",
     challenge:
-      "問い合わせ対応に時間がかかりすぎ、本来のコンテンツ制作に集中できない",
-    outcome:
-      "FAQ を整理したうえでチャットボットを構築し、LINE からも同じナレッジで案内。繰り返し質問をボットに任せ、個別対応は必要な案件に絞った運用イメージ",
-  },
-  {
-    industry: "小売・サービス業（地域店舗・架空シナリオ）",
-    challenge: "既存サイトが古く、スマホ表示が崩れ来店導線も分かりにくい",
-    outcome:
-      "Next.js でレスポンシブ対応の LP を制作。キャッチコピー・料金・予約導線を一画面に整理し、更新しやすい構成でリニューアル",
+      "送料・返品ルールの確認が面倒で、購入をやめるお客様が多かった",
+    result: "購入率（CVR）が5%向上し、CS担当の負担も大幅に削減",
+    demoUrl: "https://udify.app/chat/Ll5d2LmJaL47xTrL",
   },
 ];
 
@@ -174,7 +167,7 @@ export const portfolioItems: PortfolioItem[] = [
     subtitle: "業種不問・FAQ 対応型（Dify 公開チャット）",
     summary:
       "Dify で公開している対話デモです。FAQ や案内の一次対応イメージとして、業種を問わず参考にご覧いただけます。",
-    tags: ["Dify", "チャットボット", "FAQ対応"],
+    tags: ["Claude API", "Dify"],
     gradient: "from-navy-700 to-navy-950",
     demoUrl: "https://udify.app/chat/Ll5d2LmJaL47xTrL",
   },
@@ -183,7 +176,7 @@ export const portfolioItems: PortfolioItem[] = [
     subtitle: "手打ちうどん店 LP（架空店舗・公開デモ）",
     summary:
       "飲食店の開業・店舗サイトを想定した1ページ構成。こだわり・メニュー・アクセスなど来店導線を整理したサンプルです。",
-    tags: ["Netlify", "LP", "レスポンシブ"],
+    tags: ["Next.js", "Vercel"],
     gradient: "from-gold-600 to-navy-800",
     demoUrl: "https://udondemo.netlify.app/",
   },
@@ -222,31 +215,33 @@ export const processSteps = [
 export const faqItems = [
   {
     q: "どんな業種でも対応できますか？",
-    a: "はい。医療・飲食・小売・士業・個人事業主など、業種を問わずご相談いただけます。まずは課題と既存の仕組みを伺い、無理のない範囲からご提案します。お気軽にご連絡ください。",
+    a: "はい。医療・不動産・美容・飲食・EC・士業・個人事業主など業種問わず対応します。",
   },
   {
     q: "費用はどのくらいかかりますか？",
-    a: "チャットボット構築・LP 制作・コンサルティングのいずれも、規模・要件により変動します。無料相談のうえでおおまかなお見積りと、段階的な進め方をご提案します。",
+    a: "基本プラン50,000円〜、モニタープラン30,000円〜です。無料相談のうえでお見積りします。",
   },
   {
     q: "ITに詳しくなくても大丈夫ですか？",
-    a: "はい。操作説明・マニュアル・簡易サポートをセットにしており、非エンジニアの方でも運用しやすい設計を心がけています。",
+    a: "はい。操作説明・マニュアル・簡易サポートをセットにしており、非エンジニアの方でも運用できる設計を心がけています。",
   },
   {
-    q: "導入までどのくらいかかりますか？",
-    a: "検証（PoC）で数週間から、本番連携やサイト一式まで含む場合は要件により数ヶ月となることもあります。業種・チーム規模にかかわらず、優先度の高い機能から段階リリースすることも可能です。",
+    q: "現役看護師が副業でやっているのですか？",
+    a: "はい。本業の臨床経験を活かしながら、AIとWebの力で業務課題を解決することを使命としています。",
   },
 ];
 
 export const profile = {
   name: "内田真悟（Shingo Uchida）",
+  tradeName: "Vital Lab（バイタルラボ）",
+  email: "shingo.u83@gmail.com",
   handle: "@dharmataishou",
   xUrl: "https://x.com/dharmataishou",
-  roles: "現役看護師（病棟、外来、オペ室）× AIシステム構築・Web制作",
+  roles: "現役看護師 × AIシステム構築・Web制作",
   story: [
-    "病棟・外来・オペ室で看護師として勤務し、記録・連携・コミュニケーションの現場を日々担っています。",
-    "副業として AI システム構築・Web 制作・チャットボット開発に取り組み、Claude API / Dify / ChatGPT API・Next.js・Netlify / Vercel を用いた実装と公開までを行っています。",
-    "中小企業・個人事業主の皆さまへ、業種を問わず「続けられる仕組み」づくりをサポートしています。",
+    "現役看護師として臨床に立ち、記録・連携・コミュニケーションの現場を日々担っています。",
+    "副業として AI システム構築・Web 制作・チャットボット開発・AI研修に取り組み、Claude API / Dify / ChatGPT API・Next.js・Netlify / Vercel を用いた実装と公開までを行っています。",
+    "中小企業経営者・個人事業主・小規模事業者の皆さまへ、業種を問わず「続けられる仕組み」づくりをサポートしています。",
   ],
   tools: [
     "Claude API",
@@ -260,10 +255,59 @@ export const profile = {
     "現場で培った「ちゃんと使われるか」の視点と、実装のスピードを両立させたい。AI と Web で、経営者・スタッフの負担を減らし、本業に集中できる時間を増やすお手伝いをします。",
 };
 
+export type PricingPlan = {
+  name: string;
+  price: string;
+  description: string;
+  bullets: string[];
+  badge?: string;
+};
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    name: "基本プラン",
+    price: "50,000円〜",
+    description: "AIエージェントの作成からマニュアル学習、公開設定まで一式を含みます。",
+    bullets: ["納期目安：最短5日〜2週間"],
+  },
+  {
+    name: "モニタープラン",
+    price: "30,000円〜",
+    description:
+      "制作したAIを実績として公開させていただける場合の特別価格です。",
+    bullets: ["毎月3社限定"],
+    badge: "モニター募集",
+  },
+  {
+    name: "継続サポート",
+    price: "月額15,000円〜",
+    description: "運用を支えるオプションです。",
+    bullets: [
+      "回答チェック",
+      "新資料の追加学習",
+      "運用サポート",
+    ],
+    badge: "オプション",
+  },
+  {
+    name: "カスタマイズ",
+    price: "別途お見積もり",
+    description: "要件に応じた個別開発・連携・大規模ナレッジ設計など。",
+    bullets: ["無料相談のうえで範囲とスケジュールをご提案します"],
+  },
+];
+
+export const contact = {
+  intro:
+    "まずは『こんなことできる？』という雑談レベルで構いません。現状の業務フローを聞かせていただければ、AIで楽にできる部分を無料で診断いたします。無理な売り込みは一切しません。お気軽にご連絡ください。",
+  googleFormUrl: "https://forms.gle/F9xi3FaUGRFjdiUg7",
+};
+
 export const navLinks = [
   { href: "#services", label: "サービス" },
   { href: "#stats", label: "実績" },
   { href: "#cases", label: "導入事例" },
+  { href: "#pricing", label: "料金" },
   { href: "#portfolio", label: "制作実績" },
   { href: "#testimonials", label: "お客様の声" },
   { href: "#process", label: "導入の流れ" },

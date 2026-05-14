@@ -16,12 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-pi-six-05uxekb5uk.vercel.app"),
   title: siteMeta.title,
   description: siteMeta.description,
   openGraph: {
     title: siteMeta.title,
     description: siteMeta.description,
     locale: "ja_JP",
+    url: "https://portfolio-pi-six-05uxekb5uk.vercel.app/",
   },
 };
 
