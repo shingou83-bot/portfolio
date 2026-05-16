@@ -1,8 +1,7 @@
-import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { PortfolioSection } from "@/components/sections/PortfolioSection";
+import { LiveDemosSection } from "@/components/sections/LiveDemosSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ProfileSection } from "@/components/sections/ProfileSection";
@@ -14,11 +13,10 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <LiveDemosSection />
       <ServicesSection />
       <StatsSection />
-      <CaseStudiesSection />
       <PricingSection />
-      <PortfolioSection />
       <TestimonialsSection />
       <ProcessSection />
       <FAQSection />

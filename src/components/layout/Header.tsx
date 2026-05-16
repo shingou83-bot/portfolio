@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/content/site";
+import { headerNavLinks } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 
 export function Header() {
@@ -21,7 +21,7 @@ export function Header() {
           <span className="ml-2 font-normal text-gold-400">AI × Web</span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="メイン">
-          {navLinks.map((link) => (
+          {headerNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -49,7 +49,7 @@ export function Header() {
         }`}
       >
         <Container className="flex flex-col gap-1 py-4">
-          {navLinks.map((link) => (
+          {headerNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}

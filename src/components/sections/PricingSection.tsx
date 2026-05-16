@@ -16,7 +16,7 @@ export function PricingSection() {
             id="pricing-heading"
             eyebrow="Pricing"
             title="料金プラン"
-            description="まずは無料相談で業務フローを伺い、最適なプランをご提案します。"
+            description="無料相談で業務を伺い、プランをご提案します。"
           />
         </FadeInSection>
         <ul className="grid gap-6 md:grid-cols-2 lg:gap-8">

@@ -3,22 +3,36 @@ import { BookOpen, CalendarClock, MessagesSquare } from "lucide-react";
 
 export const siteMeta = {
   title:
-    "内田真悟（Shingo Uchida）| Vital Lab — AIシステム構築・Web制作（現役看護師）",
+    "内田真悟（Shingo Uchida）| Vital Lab — 医療・介護向けAI・Web（現役看護師）",
   description:
-    "中小企業経営者・個人事業主・小規模事業者向け。Claude API / Dify / ChatGPT API によるチャットボット、業務自動化、Next.js の Web 制作まで業種を問わず伴走。Netlify / Vercel で公開まで対応。",
+    "医療・介護・クリニック周りの問い合わせ対応や記録業務の効率化。Claude API / Dify / ChatGPT API と Next.js でチャットボット・業務アプリを設計・公開まで伴走。",
 };
 
 export const hero = {
   eyebrow: "現役看護師 × AIシステム構築・Web制作",
-  title: "AIという『文句を言わない即戦力』を採用しませんか？",
+  title: "医療・介護・クリニックの問い合わせ対応や記録を、AIで軽くします。",
   subtitle:
-    "あなたのビジネスの\"面倒\"を、AIとWebで仕組み化する。中小企業・個人事業主の皆さまへ、チャットボットからサイト制作まで業種を問わず伴走します。",
+    "窓口の一次対応から記録まわりまで、現場の流れを踏まえて設計します。チャットボット開発からWeb公開まで業種を問わず伴走します。",
   ctaLabel: "まずは無料相談する",
+  demoCtaLabel: "実際に触れるデモはこちら",
+  demoCtaHref: "#live-demos",
+};
+
+/** デモ統合ブロック（ヒーロー直下） */
+export const liveDemosSection = {
+  eyebrow: "Live demos",
+  title: "実際に触れるデモはこちら",
+  description:
+    "チャットで試せるサンプルと、ブラウザで開ける公開デモです。会場ではまずここからどうぞ。",
+  casesSubheading: "対話デモ（業種別サンプル）",
+  casesLead: "すぐに操作できるチャット形式のイメージです。",
+  portfolioSubheading: "公開サイト・アプリ・教材",
+  portfolioLead: "公開中の制作物です。",
 };
 
 /** サービスセクション見出し下の説明文 */
 export const servicesSectionDescription =
-  "窓口案内から24時間受付、独自ナレッジ学習まで。課題に合わせて設計し、運用しやすい形でお渡しします。";
+  "窓口案内・24時間受付・独自ナレッジ学習まで。課題に合わせて設計します。";
 
 export type ServiceItem = {
   title: string;
@@ -132,6 +146,9 @@ export type PortfolioItem = {
   tags: string[];
   gradient: string;
   demoUrl: string;
+  /** public/ 配下のパス（例: /portfolio/dental-interview.jpg）。未指定時はグラデーション枠 */
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export const portfolioItems: PortfolioItem[] = [
@@ -298,17 +315,30 @@ export const pricingPlans: PricingPlan[] = [
 ];
 
 export const contact = {
+  sectionDescription:
+    "雑談からOK。業務フローを伺い、AIで楽になる部分を無料で整理します。",
   intro:
     "まずは『こんなことできる？』という雑談レベルで構いません。現状の業務フローを聞かせていただければ、AIで楽にできる部分を無料で診断いたします。無理な売り込みは一切しません。お気軽にご連絡ください。",
   googleFormUrl: "https://forms.gle/F9xi3FaUGRFjdiUg7",
 };
 
-export const navLinks = [
+/** ヘッダー（営業・交流会向けに絞り込み） */
+export const headerNavLinks = [
+  { href: "#live-demos", label: "デモ" },
+  { href: "#services", label: "サービス" },
+  { href: "#pricing", label: "料金" },
+  { href: "#profile", label: "プロフィール" },
+  { href: "#contact", label: "お問い合わせ" },
+];
+
+/** フッター（ページ内の全アンカー） */
+export const footerLinks = [
+  { href: "#live-demos", label: "デモ一覧" },
+  { href: "#cases", label: "対話デモ" },
+  { href: "#portfolio", label: "制作実績" },
   { href: "#services", label: "サービス" },
   { href: "#stats", label: "実績" },
-  { href: "#cases", label: "導入事例" },
   { href: "#pricing", label: "料金" },
-  { href: "#portfolio", label: "制作実績" },
   { href: "#testimonials", label: "お客様の声" },
   { href: "#process", label: "導入の流れ" },
   { href: "#faq", label: "FAQ" },

@@ -66,8 +66,13 @@ export function ContactSection() {
             id="contact-heading"
             eyebrow="Contact"
             title="お問い合わせ"
-            description={contact.intro}
+            description={contact.sectionDescription}
           />
+        </FadeInSection>
+        <FadeInSection>
+          <p className="mx-auto -mt-6 mb-12 max-w-3xl text-center text-sm leading-[1.85] text-navy-700 md:-mt-8 md:mb-14 md:text-base md:leading-[1.85]">
+            {contact.intro}
+          </p>
         </FadeInSection>
         <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-5 lg:gap-12">
           <FadeInSection className="lg:col-span-2">

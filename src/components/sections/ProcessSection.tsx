@@ -18,7 +18,7 @@ export function ProcessSection() {
             invert
             eyebrow="Process"
             title="導入の流れ"
-            description="無料相談からサポートまで、段階を明確に進めます。"
+            description="相談から公開・運用まで、段階を明示します。"
           />
         </FadeInSection>
         <FadeInSection>

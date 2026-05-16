@@ -7,6 +7,8 @@ type SectionHeadingProps = {
   description?: ReactNode;
   /** 暗い背景セクション用 */
   invert?: boolean;
+  /** 下マージンを抑えたコンパクトレイアウト（実績バッジなど） */
+  density?: "default" | "compact";
 };
 
 export function SectionHeading({
@@ -15,9 +17,12 @@ export function SectionHeading({
   title,
   description,
   invert = false,
+  density = "default",
 }: SectionHeadingProps) {
+  const margin =
+    density === "compact" ? "mb-10 md:mb-12" : "mb-16 md:mb-20";
   return (
-    <div className="mx-auto mb-16 max-w-3xl text-center md:mb-20">
+    <div className={`mx-auto max-w-3xl text-center ${margin}`}>
       {eyebrow ? (
         <p
           className={`mb-2 text-sm font-bold uppercase tracking-wider md:text-base ${

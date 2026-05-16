@@ -23,7 +23,7 @@ export function FAQSection() {
             id="faq-heading"
             eyebrow="FAQ"
             title="よくある質問"
-            description="導入前によくいただく内容をまとめました。"
+            description="導入前によくあるご質問です。"
           />
         </FadeInSection>
         <FadeInSection>

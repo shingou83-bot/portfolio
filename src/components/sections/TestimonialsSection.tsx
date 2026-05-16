@@ -17,7 +17,7 @@ export function TestimonialsSection() {
             id="testimonials-heading"
             eyebrow="Voices"
             title="お客さまの声"
-            description="デモ検証・講座・協業パートナーからのコメントです。"
+            description="デモ・講座・協業パートナーからの声です。"
           />
         </FadeInSection>
         <ul className="grid gap-6 md:grid-cols-3 md:gap-8">

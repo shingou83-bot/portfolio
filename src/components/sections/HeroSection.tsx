@@ -30,23 +30,31 @@ export function HeroSection() {
             >
               {hero.title}
             </h1>
-            <p className="mt-6 text-base leading-[1.9] text-white/75 sm:text-lg md:text-xl md:leading-[1.9]">
+            <p className="mt-6 text-balance text-base leading-[1.9] text-white/75 sm:text-lg md:text-xl md:leading-[1.9]">
               {hero.subtitle}
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
+              <Link
+                href={hero.demoCtaHref}
+                className="inline-flex min-h-12 min-w-[200px] max-w-[min(100%,22rem)] items-center justify-center rounded-full bg-gold-500 px-6 text-center text-base font-bold text-navy-950 shadow-xl shadow-gold-900/40 ring-2 ring-gold-300/70 transition hover:bg-gold-400 hover:shadow-gold-500/35 hover:ring-gold-200/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-200 sm:px-8"
+              >
+                {hero.demoCtaLabel}
+              </Link>
               <Link
                 href="#contact"
-                className="inline-flex min-h-12 min-w-[200px] items-center justify-center rounded-full bg-gold-500 px-8 text-base font-bold text-navy-950 shadow-xl shadow-gold-900/40 ring-2 ring-gold-300/70 transition hover:bg-gold-400 hover:shadow-gold-500/35 hover:ring-gold-200/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-200"
+                className="inline-flex min-h-12 min-w-[200px] items-center justify-center rounded-full border-2 border-white/30 bg-white/5 px-8 text-base font-bold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-200"
               >
                 {hero.ctaLabel}
               </Link>
+            </div>
+            <p className="mt-5 text-center">
               <Link
                 href="#services"
                 className="text-sm font-medium text-gold-200 underline-offset-4 hover:underline"
               >
                 サービスを見る
               </Link>
-            </div>
+            </p>
           </div>
         </FadeInSection>
       </Container>
