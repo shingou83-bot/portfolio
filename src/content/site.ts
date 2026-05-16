@@ -250,6 +250,8 @@ export const faqItems = [
 
 export const profile = {
   name: "内田真悟（Shingo Uchida）",
+  imageSrc: "/profile/shingo.jpg",
+  imageAlt: "内田真悟（Shingo Uchida）のプロフィール写真",
   tradeName: "Vital Lab（バイタルラボ）",
   email: "shingo.u83@gmail.com",
   handle: "@dharmataishou",

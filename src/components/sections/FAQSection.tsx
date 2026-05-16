@@ -14,19 +14,19 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="scroll-mt-24 bg-navy-50 py-24 md:py-32"
+      className="scroll-mt-24 bg-white py-20 md:py-28"
       aria-labelledby="faq-heading"
     >
-      <Container>
-        <FadeInSection>
+      <Container size="narrow">
+        <FadeInSection disabled>
           <SectionHeading
             id="faq-heading"
-            eyebrow="FAQ"
+            variant="document"
             title="よくある質問"
             description="導入前によくあるご質問です。"
           />
         </FadeInSection>
-        <FadeInSection>
+        <FadeInSection disabled>
           <Accordion items={items} />
         </FadeInSection>
       </Container>

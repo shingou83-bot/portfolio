@@ -9,13 +9,14 @@ export function LiveDemosSection() {
   return (
     <section
       id="live-demos"
-      className="scroll-mt-24 bg-white py-24 md:py-32"
+      className="scroll-mt-24 bg-white py-20 md:py-28"
       aria-labelledby="live-demos-heading"
     >
-      <Container>
+      <Container size="wide">
         <FadeInSection>
           <SectionHeading
             id="live-demos-heading"
+            variant="marketing"
             eyebrow={liveDemosSection.eyebrow}
             title={liveDemosSection.title}
             description={liveDemosSection.description}

@@ -5,10 +5,9 @@ type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
   description?: ReactNode;
-  /** 暗い背景セクション用 */
   invert?: boolean;
-  /** 下マージンを抑えたコンパクトレイアウト（実績バッジなど） */
   density?: "default" | "compact";
+  variant?: "marketing" | "document";
 };
 
 export function SectionHeading({
@@ -18,15 +17,26 @@ export function SectionHeading({
   description,
   invert = false,
   density = "default",
+  variant = "marketing",
 }: SectionHeadingProps) {
+  const isDocument = variant === "document";
   const margin =
-    density === "compact" ? "mb-10 md:mb-12" : "mb-16 md:mb-20";
+    density === "compact"
+      ? isDocument
+        ? "mb-8 md:mb-10"
+        : "mb-10 md:mb-12"
+      : isDocument
+        ? "mb-10 md:mb-12"
+        : "mb-16 md:mb-20";
+
+  const align = isDocument ? "text-left" : "mx-auto text-center";
+
   return (
-    <div className={`mx-auto max-w-3xl text-center ${margin}`}>
-      {eyebrow ? (
+    <div className={`max-w-3xl ${align} ${margin}`}>
+      {eyebrow && !isDocument ? (
         <p
-          className={`mb-2 text-sm font-bold uppercase tracking-wider md:text-base ${
-            invert ? "text-gold-400" : "text-gold-600"
+          className={`mb-2 text-sm font-medium uppercase tracking-wider md:text-base ${
+            invert ? "text-white/70" : "text-muted"
           }`}
         >
           {eyebrow}
@@ -34,16 +44,18 @@ export function SectionHeading({
       ) : null}
       <h2
         id={id}
-        className={`text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl ${
-          invert ? "text-white" : "text-navy-900"
-        }`}
+        className={`tracking-tight ${
+          isDocument
+            ? "text-2xl font-semibold md:text-3xl"
+            : "text-3xl font-bold md:text-4xl lg:text-5xl"
+        } ${invert ? "text-white" : "text-foreground"}`}
       >
         {title}
       </h2>
       {description ? (
         <div
-          className={`mt-5 text-base leading-[1.85] md:text-lg md:leading-[1.85] ${
-            invert ? "text-white/75" : "text-navy-700"
+          className={`mt-4 text-base leading-relaxed md:text-lg ${
+            invert ? "text-white/75" : "text-muted"
           }`}
         >
           {description}

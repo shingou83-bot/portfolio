@@ -25,42 +25,42 @@ function CaseStudiesList() {
         return (
           <li key={`${c.industry}-${i}`}>
             <FadeInSection delay={i * 0.06}>
-              <article className="flex h-full flex-col rounded-2xl border border-navy-100 bg-gradient-to-b from-white to-navy-50 p-6 shadow-sm md:p-8">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+              <article className="flex h-full flex-col rounded-lg border border-border bg-white p-6 md:p-7">
+                <header className="mb-4 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-neutral-100 text-foreground">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
-                  <h3 className="text-xl font-bold text-navy-900 md:text-2xl">
+                  <h3 className="text-lg font-semibold text-foreground md:text-xl">
                     {c.industry}
                   </h3>
-                </div>
-                <div className="flex flex-1 flex-col space-y-3 text-sm leading-[1.85] md:text-base md:leading-[1.85]">
+                </header>
+                <div className="flex flex-1 flex-col space-y-3 text-sm leading-relaxed md:text-base">
                   <div>
-                    <p className="font-bold text-navy-800">悩み</p>
-                    <p className="mt-1 text-navy-700">{c.challenge}</p>
+                    <p className="font-medium text-foreground">悩み</p>
+                    <p className="mt-1 text-muted">{c.challenge}</p>
                   </div>
                   {c.approach != null && c.approach !== "" ? (
                     <div>
-                      <p className="font-bold text-navy-800">取り組み</p>
-                      <p className="mt-1 text-navy-700">{c.approach}</p>
+                      <p className="font-medium text-foreground">取り組み</p>
+                      <p className="mt-1 text-muted">{c.approach}</p>
                     </div>
                   ) : null}
                   {c.result != null && c.result !== "" ? (
                     <div>
-                      <p className="font-bold text-gold-700">効果</p>
-                      <p className="mt-1 text-navy-700">{c.result}</p>
+                      <p className="font-medium text-foreground">効果</p>
+                      <p className="mt-1 text-muted">{c.result}</p>
                     </div>
                   ) : null}
                   {c.outcome != null && c.outcome !== "" ? (
                     <div>
-                      <p className="font-bold text-gold-700">成果・方向性</p>
-                      <p className="mt-1 text-navy-700">{c.outcome}</p>
+                      <p className="font-medium text-foreground">成果・方向性</p>
+                      <p className="mt-1 text-muted">{c.outcome}</p>
                     </div>
                   ) : null}
                   <div className="mt-auto pt-4">
                     {isDemoPlaceholder ? (
                       <span
-                        className="inline-flex w-full min-h-12 cursor-not-allowed items-center justify-center rounded-full border border-navy-200 bg-navy-100/80 px-4 text-center text-sm font-bold text-navy-500"
+                        className="inline-flex w-full min-h-10 cursor-not-allowed items-center justify-center rounded-md border border-border bg-neutral-50 px-4 text-center text-sm font-medium text-muted"
                         aria-disabled="true"
                       >
                         {demoLabel}（準備中）
@@ -70,7 +70,7 @@ function CaseStudiesList() {
                         href={c.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-gold-500 px-4 text-center text-sm font-bold text-navy-950 shadow-md ring-2 ring-gold-300/60 transition hover:bg-gold-400 hover:ring-gold-200/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600"
+                        className="inline-flex min-h-10 w-full items-center justify-center rounded-md border border-accent px-4 text-center text-sm font-semibold text-accent transition hover:bg-accent/5"
                       >
                         {demoLabel}
                       </Link>
@@ -96,10 +96,10 @@ export function CaseStudiesSection({ embedded = false }: CaseStudiesSectionProps
       <div id="cases" className="scroll-mt-24 space-y-6">
         <FadeInSection>
           <div>
-            <h3 className="text-2xl font-bold tracking-tight text-navy-900 md:text-3xl">
+            <h3 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
               {liveDemosSection.casesSubheading}
             </h3>
-            <p className="mt-2 text-sm leading-[1.85] text-navy-600 md:text-base md:leading-[1.85]">
+            <p className="mt-2 text-sm leading-relaxed text-muted md:text-base">
               {liveDemosSection.casesLead}
             </p>
           </div>
@@ -119,6 +119,7 @@ export function CaseStudiesSection({ embedded = false }: CaseStudiesSectionProps
         <FadeInSection>
           <SectionHeading
             id="cases-heading"
+            variant="marketing"
             eyebrow="Case studies"
             title="導入事例"
             description="業種別のチャットデモを、その場でお試しください。"

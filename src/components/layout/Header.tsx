@@ -10,22 +10,22 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy-950/90 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-white/95 backdrop-blur-md">
       <Container className="flex h-14 items-center justify-between md:h-16">
         <Link
           href="/"
-          className="text-sm font-bold tracking-tight text-white md:text-base"
+          className="text-sm font-semibold tracking-tight text-foreground md:text-base"
           onClick={() => setOpen(false)}
         >
           Shingo
-          <span className="ml-2 font-normal text-gold-400">AI × Web</span>
+          <span className="ml-2 font-normal text-muted">AI × Web</span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="メイン">
           {headerNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition hover:bg-black/5 hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -33,7 +33,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-white lg:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-foreground lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "メニューを閉じる" : "メニューを開く"}
@@ -44,7 +44,7 @@ export function Header() {
       </Container>
       <div
         id="mobile-nav"
-        className={`border-t border-white/10 bg-navy-950 lg:hidden ${
+        className={`border-t border-border bg-white lg:hidden ${
           open ? "block" : "hidden"
         }`}
       >
@@ -53,7 +53,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 hover:bg-white/10"
+              className="rounded-md px-3 py-3 text-sm font-medium text-foreground/80 hover:bg-black/5"
               onClick={() => setOpen(false)}
             >
               {link.label}

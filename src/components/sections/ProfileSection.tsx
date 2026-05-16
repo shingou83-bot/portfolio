@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { profile } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
@@ -5,74 +6,86 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { UserRound } from "lucide-react";
 
 export function ProfileSection() {
+  const hasPhoto =
+    profile.imageSrc != null && profile.imageSrc !== "";
+
   return (
     <section
       id="profile"
-      className="scroll-mt-24 bg-white py-24 md:py-32"
+      className="scroll-mt-24 bg-surface py-20 md:py-28"
       aria-labelledby="profile-heading"
     >
-      <Container>
-        <FadeInSection>
+      <Container size="narrow">
+        <FadeInSection disabled>
           <SectionHeading
             id="profile-heading"
-            eyebrow="Profile"
+            variant="document"
             title="プロフィール"
             description="臨床の現場感と、AI・Web実装を組み合わせて伴走します。"
           />
         </FadeInSection>
-        <FadeInSection>
-          <div className="mx-auto max-w-3xl rounded-2xl border border-navy-100 bg-navy-50/80 p-6 shadow-sm md:flex md:gap-10 md:p-10">
-            <div className="mb-6 flex justify-center md:mb-0 md:flex-col md:items-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-navy-900 text-gold-400 md:h-28 md:w-28">
-                <UserRound className="h-12 w-12 md:h-14 md:w-14" aria-hidden />
-              </div>
-            </div>
-            <div className="flex-1">
-              <p className="text-2xl font-bold text-navy-900">
-                {profile.name}{" "}
-                <span className="text-base font-normal text-gold-600 md:text-lg">
-                  {profile.handle}
+        <FadeInSection disabled>
+          <article>
+            <header className="flex items-start gap-5">
+              {hasPhoto ? (
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-border bg-neutral-100 md:h-24 md:w-24">
+                  <Image
+                    src={profile.imageSrc}
+                    alt={profile.imageAlt ?? profile.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="96px"
+                    priority
+                  />
+                </div>
+              ) : (
+                <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-lg border border-border bg-neutral-100 text-muted md:h-24 md:w-24">
+                  <UserRound className="h-8 w-8 md:h-9 md:w-9" aria-hidden />
                 </span>
-              </p>
-              <p className="mt-1 text-sm font-medium text-navy-600 md:text-base">
-                {profile.tradeName}
-              </p>
-              <p className="mt-1 text-sm font-bold text-navy-700 md:text-base">
-                {profile.roles}
-              </p>
-              <p className="mt-2 text-sm md:text-base">
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="font-medium text-gold-700 underline-offset-2 hover:underline"
-                >
-                  {profile.email}
-                </a>
-              </p>
-              <div className="mt-6 space-y-4 text-sm leading-[1.9] text-navy-800 md:text-base md:leading-[1.9]">
-                {profile.story.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-              <div className="mt-6">
-                <p className="text-xs font-bold uppercase tracking-wide text-navy-600">
-                  使用ツール・技術
+              )}
+              <div>
+                <p className="text-xl font-semibold text-foreground">
+                  {profile.name}{" "}
+                  <span className="text-base font-normal text-muted">
+                    {profile.handle}
+                  </span>
                 </p>
-                <ul className="mt-2 flex flex-wrap gap-2">
-                  {profile.tools.map((tool) => (
-                    <li
-                      key={tool}
-                      className="rounded-full border border-gold-200 bg-white px-3 py-1 text-xs font-medium text-gold-800 md:text-sm"
-                    >
-                      {tool}
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-1 text-sm text-muted">{profile.tradeName}</p>
+                <p className="mt-1 text-sm font-medium text-foreground">
+                  {profile.roles}
+                </p>
+                <p className="mt-2 text-sm">
+                  <a
+                    href={`mailto:${profile.email}`}
+                    className="font-medium text-accent hover:underline"
+                  >
+                    {profile.email}
+                  </a>
+                </p>
               </div>
-              <p className="mt-6 border-l-4 border-gold-500 pl-4 text-sm italic leading-[1.9] text-navy-800 md:text-base md:leading-[1.9]">
-                {profile.mission}
-              </p>
+            </header>
+            <div className="mt-8 space-y-4 leading-relaxed text-muted">
+              {profile.story.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
             </div>
-          </div>
+            <div>
+              <p className="text-sm font-medium text-foreground">使用ツール・技術</p>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {profile.tools.map((tool) => (
+                  <li
+                    key={tool}
+                    className="rounded-md border border-border bg-white px-3 py-1 text-sm text-muted"
+                  >
+                    {tool}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="mt-8 border-l-2 border-border pl-4 leading-relaxed text-muted">
+              {profile.mission}
+            </p>
+          </article>
         </FadeInSection>
       </Container>
     </section>

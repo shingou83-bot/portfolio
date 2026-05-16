@@ -14,26 +14,26 @@ export function Accordion({ items }: AccordionProps) {
   const baseId = useId();
 
   return (
-    <div className="divide-y divide-navy-100 rounded-2xl border border-navy-100 bg-white shadow-sm">
+    <div className="divide-y divide-border border-y border-border">
       {items.map((item) => {
         const isOpen = openId === item.id;
         const panelId = `${baseId}-${item.id}-panel`;
         const headerId = `${baseId}-${item.id}-header`;
 
         return (
-          <div key={item.id} className="px-4 py-1 md:px-6">
+          <div key={item.id}>
             <h3>
               <button
                 type="button"
                 id={headerId}
-                className="flex w-full items-center justify-between gap-4 py-4 text-left text-lg font-bold text-navy-900 md:text-xl"
+                className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-semibold text-foreground md:text-lg"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenId(isOpen ? null : item.id)}
               >
                 <span>{item.question}</span>
                 <ChevronDown
-                  className={`h-5 w-5 shrink-0 text-gold-600 transition-transform duration-200 ${
+                  className={`h-5 w-5 shrink-0 text-muted transition-transform duration-200 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                   aria-hidden
@@ -47,7 +47,7 @@ export function Accordion({ items }: AccordionProps) {
               hidden={!isOpen}
               className="pb-4"
             >
-              <p className="text-sm leading-[1.9] text-navy-700 md:text-base md:leading-[1.9]">
+              <p className="text-sm leading-relaxed text-muted md:text-base">
                 {item.answer}
               </p>
             </div>

@@ -4,34 +4,34 @@ import { Container } from "@/components/ui/Container";
 
 export function Footer() {
   return (
-    <footer className="border-t border-navy-100 bg-white py-12">
+    <footer className="border-t border-border bg-white py-14">
       <Container>
-        <div className="flex flex-col gap-8 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div>
-            <p className="text-xl font-bold text-navy-900">Shingo</p>
-            <p className="mt-1 text-sm leading-[1.85] text-navy-600">{profile.roles}</p>
+            <p className="text-lg font-semibold text-foreground">Shingo</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted">{profile.roles}</p>
             <Link
               href={profile.xUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm font-bold text-gold-600 hover:underline"
+              className="mt-3 inline-block text-sm font-medium text-accent hover:underline"
             >
               X {profile.handle}
             </Link>
           </div>
-          <nav className="flex flex-wrap gap-x-4 gap-y-2" aria-label="フッター">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="フッター">
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-navy-600 hover:text-gold-600"
+                className="text-sm text-muted transition hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
         </div>
-        <p className="mt-10 text-center text-xs leading-[1.85] text-navy-500">
+        <p className="mt-12 text-center text-xs leading-relaxed text-muted">
           © {new Date().getFullYear()} Shingo. All rights reserved.
         </p>
       </Container>

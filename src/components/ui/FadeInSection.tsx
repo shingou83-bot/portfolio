@@ -7,16 +7,18 @@ type FadeInSectionProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  disabled?: boolean;
 };
 
 export function FadeInSection({
   children,
   className,
   delay = 0,
+  disabled = false,
 }: FadeInSectionProps) {
   const reduce = useReducedMotion();
 
-  if (reduce) {
+  if (reduce || disabled) {
     return <div className={className}>{children}</div>;
   }
 

@@ -14,9 +14,9 @@ import {
 } from "@/lib/validators";
 
 const inputClass =
-  "mt-1 w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-navy-900 leading-[1.85] shadow-sm transition placeholder:text-navy-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/25";
+  "mt-1 w-full rounded-md border border-border bg-white px-3 py-2.5 text-foreground leading-relaxed transition placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
 
-const labelClass = "text-sm font-bold text-navy-800";
+const labelClass = "text-sm font-medium text-foreground";
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -57,30 +57,28 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="scroll-mt-24 bg-gradient-to-b from-navy-50 to-white py-24 md:py-32"
+      className="scroll-mt-24 border-t border-border bg-white py-20 md:py-28"
       aria-labelledby="contact-heading"
     >
-      <Container>
-        <FadeInSection>
+      <Container size="narrow">
+        <FadeInSection disabled>
           <SectionHeading
             id="contact-heading"
-            eyebrow="Contact"
+            variant="document"
             title="お問い合わせ"
             description={contact.sectionDescription}
           />
         </FadeInSection>
-        <FadeInSection>
-          <p className="mx-auto -mt-6 mb-12 max-w-3xl text-center text-sm leading-[1.85] text-navy-700 md:-mt-8 md:mb-14 md:text-base md:leading-[1.85]">
-            {contact.intro}
-          </p>
+        <FadeInSection disabled>
+          <p className="mb-10 leading-relaxed text-muted">{contact.intro}</p>
         </FadeInSection>
-        <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-5 lg:gap-12">
-          <FadeInSection className="lg:col-span-2">
-            <div className="flex flex-col gap-4 rounded-2xl border border-navy-100 bg-navy-900 p-6 text-white shadow-lg md:p-8">
-              <p className="text-sm font-bold text-gold-300">ご連絡先</p>
+        <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
+          <FadeInSection disabled className="lg:col-span-2">
+            <nav className="flex flex-col gap-3" aria-label="連絡先">
+              <p className="text-sm font-medium text-foreground">ご連絡先</p>
               <Link
                 href={`mailto:${profile.email}`}
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 text-center text-sm font-bold text-white transition hover:bg-white/20"
+                className="text-sm text-accent hover:underline"
               >
                 メール：{profile.email}
               </Link>
@@ -88,7 +86,7 @@ export function ContactSection() {
                 href={profile.xUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-gold-500 px-4 text-center text-sm font-bold text-navy-950 shadow-lg shadow-gold-900/35 ring-2 ring-gold-300/60 transition hover:bg-gold-400 hover:ring-gold-200/80"
+                className="text-sm text-accent hover:underline"
               >
                 X {profile.handle} を開く
               </Link>
@@ -96,29 +94,18 @@ export function ContactSection() {
                 href={contact.googleFormUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 text-center text-sm font-bold text-white transition hover:bg-white/20"
+                className="text-sm text-accent hover:underline"
               >
                 Googleフォームで相談する
               </Link>
-              <button
-                type="button"
-                disabled
-                className="inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 text-center text-sm font-bold text-white/45"
-                aria-disabled="true"
-              >
-                LINE公式（準備中）
-              </button>
-              <p className="text-xs leading-[1.85] text-white/55">
+              <span className="text-sm text-muted">LINE公式（準備中）</span>
+              <p className="mt-2 text-xs leading-relaxed text-muted">
                 このページのフォームからも送信いただけます。
               </p>
-            </div>
+            </nav>
           </FadeInSection>
-          <FadeInSection className="lg:col-span-3" delay={0.05}>
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm md:p-8"
-              noValidate
-            >
+          <FadeInSection disabled className="lg:col-span-3">
+            <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div className="space-y-4">
                 <div>
                   <label htmlFor="contact-name" className={labelClass}>
@@ -178,7 +165,7 @@ export function ContactSection() {
                   <textarea
                     id="contact-message"
                     rows={5}
-                    className={`${inputClass} resize-y min-h-[120px]`}
+                    className={`${inputClass} min-h-[120px] resize-y`}
                     {...register("message")}
                   />
                   {errors.message ? (
@@ -192,12 +179,12 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold-500 px-8 text-base font-bold text-navy-950 shadow-xl shadow-gold-900/40 ring-2 ring-gold-300/70 transition hover:bg-gold-400 hover:shadow-gold-500/35 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex min-h-10 items-center justify-center rounded-md bg-accent px-6 text-sm font-semibold text-white transition hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === "loading" ? "送信中…" : "送信する"}
                 </button>
                 {status === "success" ? (
-                  <p className="text-sm font-medium text-gold-700" role="status">
+                  <p className="text-sm font-medium text-foreground" role="status">
                     送信しました。追ってご連絡いたします。
                   </p>
                 ) : null}
