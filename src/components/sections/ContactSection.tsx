@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { contact, profile } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
+import { LineAddFriendButton } from "@/components/ui/LineAddFriendButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   contactFormSchema,
@@ -98,7 +99,12 @@ export function ContactSection() {
               >
                 Googleフォームで相談する
               </Link>
-              <span className="text-sm text-muted">LINE公式（準備中）</span>
+              <div>
+                <p className="text-sm font-medium text-foreground">LINE公式</p>
+                <div>
+                  <LineAddFriendButton />
+                </div>
+              </div>
               <p className="mt-2 text-xs leading-relaxed text-muted">
                 このページのフォームからも送信いただけます。
               </p>

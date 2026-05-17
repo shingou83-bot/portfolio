@@ -3,6 +3,7 @@ import { profile } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { LineAddFriendButton } from "@/components/ui/LineAddFriendButton";
 import { UserRound } from "lucide-react";
 
 export function ProfileSection() {
@@ -62,6 +63,12 @@ export function ProfileSection() {
                     {profile.email}
                   </a>
                 </p>
+                <div className="mt-4">
+                  <p className="text-sm font-medium text-foreground">LINE公式</p>
+                  <div className="mt-2">
+                    <LineAddFriendButton />
+                  </div>
+                </div>
               </div>
             </header>
             <div className="mt-8 space-y-4 leading-relaxed text-muted">

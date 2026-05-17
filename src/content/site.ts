@@ -256,6 +256,9 @@ export const profile = {
   email: "shingo.u83@gmail.com",
   handle: "@dharmataishou",
   xUrl: "https://x.com/dharmataishou",
+  lineUrl: "https://lin.ee/XA7fgSa",
+  lineAddFriendButtonSrc:
+    "https://scdn.line-apps.com/n/line_add_friends/btn/ja.png",
   roles: "現役看護師 × AIシステム構築・Web制作",
   story: [
     "現役看護師として臨床に立ち、記録・連携・コミュニケーションの現場を日々担っています。",
