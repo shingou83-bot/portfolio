@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BookOpen, CalendarClock, MessagesSquare } from "lucide-react";
+import { Activity, BookOpen, Globe, MessagesSquare } from "lucide-react";
 
 export const siteMeta = {
   title:
@@ -9,8 +9,8 @@ export const siteMeta = {
 };
 
 export const hero = {
-  eyebrow: "現役看護師 × AIシステム構築・Web制作",
-  title: "医療・介護・クリニックの問い合わせ対応や記録を、AIで軽くします。",
+  eyebrow: "現役看護師 × AIシステム構築・Web制作 / Vital Lab",
+  title: "医療・介護・クリニックの業務を、AIで軽くします。",
   subtitle:
     "窓口の一次対応から記録まわりまで、現場の流れを踏まえて設計します。チャットボット開発からWeb公開まで業種を問わず伴走します。",
   ctaLabel: "まずは無料相談する",
@@ -32,7 +32,7 @@ export const liveDemosSection = {
 
 /** サービスセクション見出し下の説明文 */
 export const servicesSectionDescription =
-  "窓口案内・24時間受付・独自ナレッジ学習まで。課題に合わせて設計します。";
+  "現役看護師として医療現場を知るからこそ、「実際に使われる」仕組みを設計できます。";
 
 export type ServiceItem = {
   title: string;
@@ -43,35 +43,46 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-    title: "SERVICE 01：窓口・案内係AI（FAQ・問い合わせ自動化）",
+    title: "SERVICE 01：AIチャットボット構築",
     description:
-      "「持ち物は？」「送料は？」など毎日同じ質問に自動回答。スタッフの電話対応時間を削減し、本来の業務に集中できる環境を構築します。",
+      "問い合わせ対応・受付・案内の自動化。「持ち物は？」「今日やってる？」など毎日繰り返す対応をAIに任せ、スタッフが本来の業務に集中できる環境をつくります。",
     features: [
-      "クリニック・施設の窓口、ECサイトの問い合わせなど幅広い業種で活用可能",
-      "電話・チャット・Web の一次対応を設計",
-      "ナレッジ更新しやすい会話フローを整備",
+      "クリニック・施設の窓口、ECサイトの問い合わせなど業種問わず対応",
+      "電話・チャット・Web の一次対応フローを設計",
+      "Claude API / Dify を用いたナレッジ更新しやすい構成",
     ],
     icon: MessagesSquare,
   },
   {
-    title: "SERVICE 02：24時間自動受付AI（予約・問い合わせ対応）",
+    title: "SERVICE 02：医療・介護向けAIシステム",
     description:
-      "深夜・休日でも予約や問い合わせに即レス。「電話に出られなくて他社にお客様を取られた」という機会損失を減らす設計が可能です。",
+      "記録支援・問診・業務フロー設計など、医療現場の「めんどくさい業務」をAIで解消します。看護師として日々の業務を知っているからこそ、実際に使われる設計が可能です。",
     features: [
-      "不動産・美容室・飲食店など、予約導線に合わせたシナリオ設計",
-      "営業時間外も見込み客を逃さない一次対応",
-      "既存の予約・CRM 連携は要件に応じて検討",
+      "SOAP記録の下書き自動生成・来院前問診の対話形式整理",
+      "現場の運用フローを踏まえたガードレール設計",
+      "介護施設・訪問看護・クリニックなど各形態に対応",
     ],
-    icon: CalendarClock,
+    icon: Activity,
   },
   {
-    title: "SERVICE 03：専属コンシェルジュAI（RAGによる独自情報学習）",
+    title: "SERVICE 03：Webサイト制作",
     description:
-      "御社のHP・パンフレット・料金表・規約をAIに学習させ、御社のルールに沿った回答のみを返すコンシェルジュ型を構築します。",
+      "クリニック・施設・個人事業主向けのLP・プロモーションサイトを制作します。AIアシスタント統合による一次対応の自動化にも対応。",
     features: [
-      "社内向け（新人教育・マニュアル検索・総務QA）にも応用可能",
-      "出典・確認フローを意識したガードレール設計",
-      "更新された資料の再学習フローを整備",
+      "Next.js / Vercel を用いた高速・SEO対応のサイト構築",
+      "AIチャットボットを組み込んだ問い合わせ自動化サイトも対応",
+      "公開後の運用サポートも承ります",
+    ],
+    icon: Globe,
+  },
+  {
+    title: "SERVICE 04：研修・講座設計",
+    description:
+      "医療スタッフ向けのプロンプト研修・AI導入支援。15セッション以上の設計実績をもとに、多職種が無理なく使えるAI活用研修を構築します。",
+    features: [
+      "役割明示・フォーマット指定・出力確認を軸にしたプロンプト設計研修",
+      "看護師・介護士・事務など多職種向けカリキュラム対応",
+      "公開スライド教材・マニュアル制作もセットで対応可能",
     ],
     icon: BookOpen,
   },
@@ -154,9 +165,9 @@ export type PortfolioItem = {
 export const portfolioItems: PortfolioItem[] = [
   {
     title: "口腔×全身リスク問診AI",
-    subtitle: "サンプル歯科・来院前問診（公開デモ）",
+    subtitle: "歯科クリニック向け・来院前問診（公開デモ）",
     summary:
-      "お口の症状と全身状態を把握する来院前問診を、対話形式で整理する匿名サンプルです。医療ドメインでの会話設計の参考例として掲載しています。",
+      "来院前問診を対話形式で整理。口腔内リスクと全身疾患の関連を考慮した設計で、患者の状態をスムーズに把握できる歯科クリニック向け匿名デモです。",
     tags: ["Next.js", "Claude API", "Netlify"],
     gradient: "from-gold-600 to-navy-900",
     demoUrl: "https://dental-interview.netlify.app/",
@@ -165,37 +176,37 @@ export const portfolioItems: PortfolioItem[] = [
     title: "看護SOAP記録自動生成システム",
     subtitle: "反復開発 v1〜v5 の知見を反映",
     summary:
-      "週間の経過から SOAP 記録の下書きを生成する検証デモ。反復改善と現場向けガードレールの考え方を反映しています。",
-    tags: ["Next.js", "API", "Netlify"],
+      "週間経過からSOAP記録の下書きを自動生成。v5まで現場フィードバックを重ねた反復改善の過程を反映した、記録業務の時間短縮を目指すシステムです。",
+    tags: ["Next.js", "Claude API", "Netlify"],
     gradient: "from-navy-800 to-gold-600",
     demoUrl: "https://soap-demo-v5.netlify.app/",
   },
   {
     title: "医療スタッフ向けプロンプト講座",
-    subtitle: "15セッション以上の設計実績",
+    subtitle: "15セッション以上の設計実績・多職種対応",
     summary:
-      "役割明示・フォーマット指定・出力確認を軸にした公開スライド教材。多職種向け研修の構成イメージとしてご覧いただけます。",
+      "15セッション以上の設計実績をもとにした公開スライド教材。役割明示・フォーマット指定・出力確認を軸に、看護師・介護士など多職種がAIを業務に活かせる研修教材です。",
     tags: ["研修設計", "プロンプト", "公開教材"],
     gradient: "from-gold-500 to-navy-950",
     demoUrl: "https://medicalpromptslides.netlify.app/",
   },
   {
-    title: "汎用チャットボットデモ",
-    subtitle: "業種不問・FAQ 対応型（Dify 公開チャット）",
+    title: "病院・クリニック向けWebサイト（AIアシスタント付き）",
+    subtitle: "AIアシスタントで問い合わせ一次対応まで対応",
     summary:
-      "Dify で公開している対話デモです。FAQ や案内の一次対応イメージとして、業種を問わず参考にご覧いただけます。",
-    tags: ["Claude API", "Dify"],
-    gradient: "from-navy-700 to-navy-950",
-    demoUrl: "https://udify.app/chat/Ll5d2LmJaL47xTrL",
-  },
-  {
-    title: "病院・クリニック向けプロモーションサイト",
-    subtitle: "チャットボット（AIアシスタント）付き・公開中",
-    summary:
-      "サービス紹介・事例・料金・FAQ に加え、画面右下の AI アシスタントで訪問者からの質問に一次対応できる構成です。医療ドメイン向けの本番公開サイトとしてご覧いただけます。",
+      "サービス紹介・事例・料金・FAQ に加え、画面右下のAIアシスタントで訪問者の問い合わせに一次対応できる構成。医療ドメイン向けの本番公開サイトです。",
     tags: ["Next.js", "Vercel", "Claude API"],
     gradient: "from-navy-800 to-gold-600",
     demoUrl: "https://my-hp-plum.vercel.app/",
+  },
+  {
+    title: "クリニック受診案内AI",
+    subtitle: "電話対応3〜4割削減のデモ実績（Dify）",
+    summary:
+      "「持ち物は？」「今日やってる？」という問い合わせに自動応答するクリニック受診案内チャットボット。Difyを活用し、電話対応を大幅に削減するデモです。",
+    tags: ["Dify", "Claude API"],
+    gradient: "from-navy-700 to-navy-950",
+    demoUrl: "https://udify.app/chat/kR538Rnv0ttQbiy4",
   },
 ];
 
@@ -304,32 +315,35 @@ export const faqItems = [
 ];
 
 export const profile = {
-  name: "内田真悟（Shingo Uchida）",
+  name: "内田真悟（Uchida Shingo）",
   imageSrc: "/profile/shingo.jpg",
-  imageAlt: "内田真悟（Shingo Uchida）のプロフィール写真",
+  imageAlt: "内田真悟（Uchida Shingo）のプロフィール写真",
   tradeName: "Vital Lab（バイタルラボ）",
-  email: "shingo.u83@gmail.com",
-  handle: "@dharmataishou",
-  xUrl: "https://x.com/dharmataishou",
+  email: "dharmaplus83@gmail.com",
+  handle: "@dharmaplus83",
+  xUrl: "https://x.com/dharmaplus83",
   lineUrl: "https://lin.ee/XA7fgSa",
   lineAddFriendButtonSrc:
     "https://scdn.line-apps.com/n/line_add_friends/btn/ja.png",
-  roles: "現役看護師 × AIシステム構築・Web制作",
+  roles: "現役看護師 × AIシステム構築・Web制作 / Vital Lab",
   story: [
-    "現役看護師として臨床に立ち、記録・連携・コミュニケーションの現場を日々担っています。",
-    "副業として AI システム構築・Web 制作・チャットボット開発・AI研修に取り組み、Claude API / Dify / ChatGPT API・Next.js・Netlify / Vercel を用いた実装と公開までを行っています。",
-    "中小企業経営者・個人事業主・小規模事業者の皆さまへ、業種を問わず「続けられる仕組み」づくりをサポートしています。",
+    "埼玉西協同病院で現役看護師として勤務しながら、医療・介護向けのAIシステム構築とWeb制作を行っています。",
+    "「現場を知っている人間が作るAI」が強みです。チャットボット開発からWeb公開まで、業種を問わず伴走します。",
+    "🏥 看護師（2013年〜現在）　|　🚀 Vital Lab 開業（2026年4月〜）AIコンサルティング・システム構築業",
   ],
   tools: [
     "Claude API",
-    "Dify",
     "ChatGPT API",
+    "Dify",
     "Next.js",
+    "React",
     "Netlify",
     "Vercel",
+    "Google Forms",
+    "Notion",
   ],
   mission:
-    "現場で培った「ちゃんと使われるか」の視点と、実装のスピードを両立させたい。AI と Web で、経営者・スタッフの負担を減らし、本業に集中できる時間を増やすお手伝いをします。",
+    "医療現場の「めんどくさい業務」をAIで解消することが目標です。記録・問い合わせ・問診など、現場の流れを踏まえた設計ができるのが強みです。AI導入を検討しているクリニック・医療施設の最初の相談相手になれたら嬉しいです。",
 };
 
 export type PricingPlan = {
@@ -376,9 +390,9 @@ export const pricingPlans: PricingPlan[] = [
 
 export const contact = {
   sectionDescription:
-    "雑談からOK。業務フローを伺い、AIで楽になる部分を無料で整理します。",
+    "「こんなことできる？」という相談だけでも大歓迎です。夜勤明け・休日を中心に対応しており、返信は24時間以内を目安にしています。",
   intro:
-    "まずは『こんなことできる？』という雑談レベルで構いません。現状の業務フローを聞かせていただければ、AIで楽にできる部分を無料で診断いたします。無理な売り込みは一切しません。お気軽にご連絡ください。",
+    "最後までご覧いただきありがとうございます。まずは雑談レベルで構いません。現状の業務フローを聞かせていただければ、AIで楽にできる部分を無料で整理します。無理な売り込みは一切しません。X（@dharmaplus83）のDMが一番早く返信できます。",
   googleFormUrl: "https://forms.gle/F9xi3FaUGRFjdiUg7",
 };
 
