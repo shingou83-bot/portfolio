@@ -327,7 +327,7 @@ export const profile = {
     "https://scdn.line-apps.com/n/line_add_friends/btn/ja.png",
   roles: "現役看護師 × AIシステム構築・Web制作 / Vital Lab",
   story: [
-    "埼玉西協同病院で現役看護師として勤務しながら、医療・介護向けのAIシステム構築とWeb制作を行っています。",
+    "現役看護師として勤務しながら、医療・介護向けのAIシステム構築とWeb制作を行っています。",
     "「現場を知っている人間が作るAI」が強みです。チャットボット開発からWeb公開まで、業種を問わず伴走します。",
     "🏥 看護師（2013年〜現在）　|　🚀 Vital Lab 開業（2026年4月〜）AIコンサルティング・システム構築業",
   ],
@@ -413,7 +413,6 @@ export const footerLinks = [
   { href: "#services", label: "サービス" },
   { href: "#stats", label: "実績" },
   { href: "#pricing", label: "料金" },
-  { href: "#testimonials", label: "支援事例" },
   { href: "#process", label: "導入の流れ" },
   { href: "#faq", label: "FAQ" },
   { href: "#profile", label: "プロフィール" },
