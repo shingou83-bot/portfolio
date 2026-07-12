@@ -17,7 +17,7 @@ export function Header() {
           className="text-sm font-semibold tracking-tight text-foreground md:text-base"
           onClick={() => setOpen(false)}
         >
-          Shingo
+          Vital Lab
           <span className="ml-2 font-normal text-muted">AI × Web</span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="メイン">

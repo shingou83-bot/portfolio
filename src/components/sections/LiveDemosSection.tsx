@@ -1,5 +1,4 @@
 import { liveDemosSection } from "@/content/site";
-import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { Container } from "@/components/ui/Container";
 import { FadeInSection } from "@/components/ui/FadeInSection";
@@ -22,8 +21,7 @@ export function LiveDemosSection() {
             description={liveDemosSection.description}
           />
         </FadeInSection>
-        <CaseStudiesSection embedded />
-        <div className="mt-16 md:mt-24">
+        <div className="mt-10 md:mt-14">
           <PortfolioSection embedded />
         </div>
       </Container>

@@ -16,7 +16,7 @@ export function StatsSection() {
             id="stats-heading"
             variant="document"
             title="数字で見る実績"
-            description="相談受付・研修設計・反復開発の目安です。"
+            description="臨床歴・研修設計・現場での業務改善の実測値です。"
             density="compact"
           />
         </FadeInSection>

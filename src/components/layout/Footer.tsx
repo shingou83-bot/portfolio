@@ -8,7 +8,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div>
-            <p className="text-lg font-semibold text-foreground">Shingo</p>
+            <p className="text-lg font-semibold text-foreground">Vital Lab</p>
             <p className="mt-1 text-sm leading-relaxed text-muted">{profile.roles}</p>
             <Link
               href={profile.xUrl}
@@ -32,7 +32,7 @@ export function Footer() {
           </nav>
         </div>
         <p className="mt-12 text-center text-xs leading-relaxed text-muted">
-          © {new Date().getFullYear()} Shingo. All rights reserved.
+          © {new Date().getFullYear()} Vital Lab. All rights reserved.
         </p>
       </Container>
     </footer>

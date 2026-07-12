@@ -51,7 +51,6 @@ export function ProfileSection() {
                     {profile.handle}
                   </span>
                 </p>
-                <p className="mt-1 text-sm text-muted">{profile.tradeName}</p>
                 <p className="mt-1 text-sm font-medium text-foreground">
                   {profile.roles}
                 </p>
